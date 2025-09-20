@@ -20,7 +20,7 @@ Github workflow with pull requests, no github issues, no github projects.
 2. Write unit tests (test-driven)
 3. Develop the code until tests are green
 4. Update docs and context (CLAUDE.md) and tasklist
-5. Create or update the pull request
+5. Create or update the pull request, check for open PRs that are related
 
 # Overview
 
@@ -33,13 +33,15 @@ This is a Nuxt.js project using Nuxt 4.x with the following configuration:
 - **@nuxt/image** for optimized image handling
 - **@nuxt/test-utils** for testing utilities
 - **TailwindCSS 4.x** (@nuxtjs/tailwindcss, @tailwindcss/vite, tailwindcss)
+- **Prisma** with SQLite for database management
 - **pnpm** as the package manager
 
 The main application structure:
 - `app/app.vue` - Main application component
-- `app/assets/css/main.css` - Main CSS file (referenced in nuxt.config.ts)
 - `app/pages/` - File-based routing pages
 - `public/` - Static assets
+- `plugins/` - Nuxt plugins (includes Prisma client)
+- `prisma/` - Database schema and migrations
 - `nuxt.config.ts` - Nuxt configuration with modules
 - `tsconfig.json` - TypeScript configuration
 
@@ -68,6 +70,13 @@ pnpm generate       # Generate static site (if using SSG)
 pnpm postinstall    # Runs `nuxt prepare` to generate types
 ```
 
+### Database
+```bash
+npx prisma generate     # Generate Prisma client
+npx prisma db push      # Push schema changes to database
+npx prisma studio       # Open database browser
+```
+
 ## Architecture Notes
 
 - This is a Nuxt 4.x project with NuxtUI compatibility configured
@@ -76,4 +85,7 @@ pnpm postinstall    # Runs `nuxt prepare` to generate types
 - Configured modules: @nuxt/image, @nuxt/test-utils, @nuxt/ui
 - Uses TailwindCSS 4.x with @nuxtjs/tailwindcss integration
 - Uses Nuxt's file-based routing system with pages in `app/pages/`
+- **Database**: Prisma ORM with SQLite for development (file: `./dev.db`)
+- **Auth-ready**: Database schema includes User, Account, Session, VerificationToken, and Authenticator models
+- Prisma client available globally via `plugins/prisma.client.ts`
 - Devtools are enabled for development
