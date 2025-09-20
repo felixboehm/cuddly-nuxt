@@ -42,6 +42,7 @@ The main application structure:
 - `public/` - Static assets
 - `plugins/` - Nuxt plugins (includes Prisma client)
 - `prisma/` - Database schema and migrations
+- `db/` - Database files (excluded from git)
 - `nuxt.config.ts` - Nuxt configuration with modules
 - `tsconfig.json` - TypeScript configuration
 
@@ -85,7 +86,7 @@ npx prisma studio       # Open database browser
 - Configured modules: @nuxt/image, @nuxt/test-utils, @nuxt/ui
 - Uses TailwindCSS 4.x with @nuxtjs/tailwindcss integration
 - Uses Nuxt's file-based routing system with pages in `app/pages/`
-- **Database**: Prisma ORM with SQLite for development (file: `./dev.db`)
+- **Database**: Prisma ORM with SQLite for development (file: `./db/dev.db`)
 - **Auth-ready**: Database schema includes User, Account, Session, VerificationToken, and Authenticator models
 - Prisma client available globally via `plugins/prisma.client.ts`
 - Devtools are enabled for development
