@@ -1,6 +1,28 @@
-# CLAUDE.md
+# Important
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+## Development Workflow
+- Always use PRs and do never push directly on main
+- Commits and PRs need to follow semantic PR specifications
+- Each Task or Feature has its own PR including docs and tests   
+
+## CLI and Navigation
+- Always use absolute pathes to navigate, relative pathes only in config files
+- Webresearch for current date 2025
+- Never install software, ask before.
+
+# Workflow
+
+Github workflow with pull requests, no github issues, no github projects.
+- Tasklist in TODO.md.
+- High level roadmap in ROADMAP.md
+
+1. Understand feature or problem. You need 95% confidence to proceed, otherwise ask clarifying questions.
+2. Write unit tests (test-driven)
+3. Develop the code until tests are green
+4. Update docs and context (CLAUDE.md) and tasklist
+5. Create or update the pull request
+
+# Overview
 
 ## Project Structure
 
