@@ -1,5 +1,5 @@
-import { registerSchema, hashPassword } from '~/server/utils/auth'
-import { usePrisma } from '~/server/utils/prisma'
+import { registerSchema } from '../../utils/auth'
+import { usePrisma } from '../../utils/prisma'
 
 export default defineEventHandler(async (event) => {
   // Parse and validate request body

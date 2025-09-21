@@ -1,4 +1,3 @@
-import * as argon2 from 'argon2'
 import { z } from 'zod'
 import { nanoid } from 'nanoid'
 
@@ -14,16 +13,10 @@ export const loginSchema = z.object({
   password: z.string()
 })
 
-// Password hashing
-export async function hashPassword(password: string): Promise<string> {
-  return await argon2.hash(password)
-}
-
-export async function verifyPassword(hash: string, password: string): Promise<boolean> {
-  return await argon2.verify(hash, password)
-}
-
 // Generate verification token
 export function generateToken(): string {
   return nanoid(32)
 }
+
+// Note: hashPassword and verifyPassword are provided by nuxt-auth-utils
+// and are auto-imported in server context
