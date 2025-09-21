@@ -112,6 +112,18 @@ const state = reactive<Schema>({
 const loading = ref(false)
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
+  console.log('Form submitted', state)
+
+  // Check if terms are accepted
+  if (!state.terms) {
+    toast.add({
+      title: 'Error',
+      description: 'Please accept the terms and conditions',
+      color: 'red'
+    })
+    return
+  }
+
   loading.value = true
 
   try {
@@ -134,9 +146,10 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 
     await router.push('/')
   } catch (error: any) {
+    console.error('Registration error:', error)
     toast.add({
       title: 'Error',
-      description: error.data?.message || 'Failed to create account',
+      description: error.data?.message || error.message || 'Failed to create account',
       color: 'red'
     })
   } finally {

@@ -76,6 +76,7 @@ const rememberMe = ref(false)
 const loading = ref(false)
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
+  console.log('Login form submitted', state.email)
   loading.value = true
 
   try {
@@ -97,9 +98,10 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 
     await router.push('/')
   } catch (error: any) {
+    console.error('Login error:', error)
     toast.add({
       title: 'Error',
-      description: error.data?.message || 'Invalid credentials',
+      description: error.data?.message || error.message || 'Invalid credentials',
       color: 'red'
     })
   } finally {
