@@ -60,3 +60,10 @@
 - [x] Auth-ready database schema (User, Account, Session, VerificationToken, Authenticator)
 - [x] Prisma client plugin for Nuxt integration
 - [x] Database organization (./db/ directory, gitignore configuration)
+- [x] Password-based authentication implementation
+- [x] Authentication API endpoints (register, login, logout, session)
+- [x] Vue components for auth UI (LoginForm, RegisterForm, UserMenu)
+- [x] Auth pages using components (login, register)
+- [x] Unit tests for authentication utilities
+- [x] E2E tests for authentication flows
+- [x] Authentication documentation

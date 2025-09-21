@@ -1,0 +1,26 @@
+<template>
+  <div>
+    <header class="bg-white dark:bg-gray-800 shadow">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <ULink to="/" class="text-xl font-bold text-gray-900 dark:text-white">
+              Cuddly Nuxt
+            </ULink>
+          </div>
+          <div class="flex items-center">
+            <AuthUserMenu />
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+  </div>
+</template>
+
+<script setup lang="ts">
+// Layout script if needed
+</script>
