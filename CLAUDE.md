@@ -83,10 +83,21 @@ npx prisma studio       # Open database browser
 - This is a Nuxt 4.x project with NuxtUI compatibility configured
 - Uses Nuxt's auto-import system for components, composables, and utilities
 - TypeScript configuration is managed by Nuxt with compatibility date 2025-07-15
-- Configured modules: @nuxt/image, @nuxt/test-utils, @nuxt/ui
+- Configured modules: @nuxt/image, @nuxt/test-utils, @nuxt/ui, nuxt-auth-utils
 - Uses TailwindCSS 4.x with @nuxtjs/tailwindcss integration
 - Uses Nuxt's file-based routing system with pages in `app/pages/`
 - **Database**: Prisma ORM with SQLite for development (file: `./db/dev.db`)
+- **Authentication**: Password-based auth implemented with nuxt-auth-utils, Argon2 hashing, secure sessions
 - **Auth-ready**: Database schema includes User, Account, Session, VerificationToken, and Authenticator models
 - Prisma client available globally via `plugins/prisma.client.ts`
+- **Testing**: Vitest for unit tests, Playwright for E2E tests
 - Devtools are enabled for development
+
+## Current Implementation Status
+
+### ✅ Completed Features
+- **Password Authentication**: Full registration, login, logout with secure session management
+- **Vue Components**: Reusable auth forms (LoginForm, RegisterForm, UserMenu)
+- **API Endpoints**: Complete auth API with validation and error handling
+- **Testing**: Unit tests for auth utilities, E2E tests for user flows
+- **Documentation**: Comprehensive auth implementation docs
